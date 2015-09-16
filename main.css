@@ -16,7 +16,6 @@
 #header {
     background-color:#0D47A1;
     color:white;
-    text-align:left;
     padding:5px;
     position:absolute;
     border:5px;
@@ -27,7 +26,7 @@
     box-shadow: 20px 20px;
 }
 #section {
-    background-color:#E0E0E0;
+    background-color:lightgray;
     text-align:center;
     position:absolute;
     top:10%;
@@ -35,12 +34,18 @@
     right:0px;
     float:left;
     padding:1% 3%;
-    height:90%;
+    bottom:0px;
 }
 #infopage {
-    position:absolute;
+    position:fixed;
     background-color:white;
-    top=800px;
-    height=100px;
-    width=500px;
+    top:10%;
+    height:80%;
+    width:80%;
+    left:10%;
+    display:none;
+}
+#resumelink {
+    position:relative;
+    float:left;
 }

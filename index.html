@@ -4,32 +4,46 @@
 <title>Kyle Herndon</title>
 <link rel="stylesheet" type="text/css" href="main.css">
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-    
+
+<script ></script> 
+
 <script>
 var app = angular.module('cardApp', []);
 app.controller('cards', function($scope) {
-    $scope.titles = ['a','b','c','d','e','f'];})
-//function getCard(i){ angular.element($('#infopage')).style.translate(0px,0px)};
+    $scope.cards = [
+{
+    title:"CS 233",
+    subtitle:"Computer Architecture",
+    infopage:"I am currently taking this class",
+    page:1
+}
+]
+        ;})
+</script>
+<script>
+    infoVisible=function(text){document.getElementById('infopage').style.display = 'block';
+                              document.getElementById('infopage').innerHTML=text;}
+    infoInvisible=function(){document.getElementById('infopage').style.display = 'none';}
 </script>
     
 </head>
 
-<body>
+<body ng-App="cardApp">
 
 <div id="header">
-    <h1>Kyle Herndon</h1>
-</div>
+    <div><h1>Kyle Herndon</h1></div>
+</div>  
     
-<div ng-app="cardApp" ng-controller="cards" id="section">    
-<p>Name : <input type="text" ng-model="f"></p>
-<div ng-repeat="x in titles | filter:f" class="card" ng-click="getCard({{x}})">
-    {{x}}
+<div ng-app="cardApp" ng-controller="cards" id="section">
+<div ng-repeat="x in cards | filter:f" class="card" ng-click="infostyle={'top':'10%'}" onclick="infoVisible()">
+    <h1>{{x.title}}</h1>
+    <h2>{{x.subtitle}}</h2>
+    <div id="infopage">
+        <button type="button" onclick="infoInvisible()">Close</button>
+    </div>
 </div>
 </div>
-    
-<div ng-app="cardApp" ng-controller="cards" id="infopage">
-    Info
-</div>
+
 
 <div id="footer">
     
